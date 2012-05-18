@@ -1,0 +1,6 @@
+Color stored and updated per particle, as well as more visual effects like size...
+Emitters.
+Floating point support, especially in movement speeds.
+Proper particle lifetimes and emitter rates. (per particle? per emitter?)
+Particles determine when they are freeable?
+
