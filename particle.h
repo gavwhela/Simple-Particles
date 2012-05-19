@@ -13,6 +13,7 @@ public:
   virtual double getRed(void) = 0;
   virtual double getGreen(void) = 0;
   virtual double getBlue(void) = 0;
+  virtual int freeable(void) = 0;
 } ;
 
 #endif

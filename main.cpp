@@ -74,7 +74,7 @@ void keyboard(unsigned char key, int x, int y) {
 
 void display(void) {
   glClear(GL_COLOR_BUFFER_BIT);
-  glPointSize(2.0);
+  glPointSize(1.0);
   glBegin(GL_POINTS);
   int i;
   for(i = 0; i < MAX_PARTICLES; i++){
@@ -92,7 +92,7 @@ void display(void) {
 
 void idle(void) {
   int i;
-  int added = 10;
+  int added = 20;
   for(i = 0; i < MAX_PARTICLES; i++){
     Particle* p = particles[i];
     if(p == NULL && added){
@@ -102,7 +102,7 @@ void idle(void) {
     }
     if(p != NULL){
       p->update();
-      if(p->getY() < 0){
+      if(p->freeable()){
 	delete p;
 	particles[i] = NULL;
       }

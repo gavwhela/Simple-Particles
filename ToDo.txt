@@ -1,5 +1,5 @@
-More visual effects like size...
-Emitters.
-Proper particle lifetimes and emitter rates. (per particle? per emitter?)
-Particles determine when they are freeable?
+More visual effects like size, blur, etc...
+Emitters. ( Not sure how to organize the features...)
+Proper particle lifetimes and emitter rates.
+(per particle lifetime? They could already do it now, due to the freeable interface)
 

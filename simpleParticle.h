@@ -18,14 +18,15 @@ public:
   double getRed(void);
   double getGreen(void);
   double getBlue(void);
+  int freeable(void);
 private:
   int randnum(int min, int max);
-  int x;
-  int y;
-  int vx;
-  int vy;
-  int ax;
-  int ay;
+  double x;
+  double y;
+  double vx;
+  double vy;
+  double ax;
+  double ay;
   double red;
   double green;
   double blue;

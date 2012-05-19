@@ -3,12 +3,12 @@
 using namespace std;
 
 SimpleParticle::SimpleParticle(int x, int y) {
-  this->x  = x;
-  this->y  = y;
-  this->vx = randnum(-10, 11);
-  this->vy = randnum(-6, 20);
+  this->x  = (double)x;
+  this->y  = (double)y;
+  this->vx = randnum(-50, 51) * .1;
+  this->vy = randnum(-60, 101) * .1;
   this->ax = 0;
-  this->ay = -1; 
+  this->ay = -.5; 
   this->red = 1.0;
   this->green = 1.0;
   this->blue = 1.0;
@@ -27,11 +27,13 @@ void SimpleParticle::update(void) {
   this->y  += this->vy;
   this->vx += this->ax;
   this->vy += this->ay;
-  if(this->y < 0)
+  if(this->y < 0) {
     this->y = 0;
-  if(this->vy <= -200)
-    this->y = -1;
-
+    if(this->vx < 0)
+      this->vx += 1;
+    else if(this->vx > 0)
+      this->vx -=1;
+  }
   this->blue -= .04;
   if(this->blue <= 0.0) {
     this->blue = 0.0;
@@ -45,11 +47,11 @@ void SimpleParticle::update(void) {
 }
 
 int SimpleParticle::getX(void) {
-  return this->x;
+  return (int)this->x;
 }
 
 int SimpleParticle::getY(void) {
-  return this->y;
+  return (int)this->y;
 }
 
 int SimpleParticle::randnum(int min, int max) {
@@ -67,4 +69,8 @@ double SimpleParticle::getGreen(void) {
 
 double SimpleParticle::getBlue(void) {
   return this->blue;
+}
+
+int SimpleParticle::freeable(void) {
+  return (this->red <= 0.0) && (this->green <= 0.0) && (this->blue <= 0.0); 
 }
