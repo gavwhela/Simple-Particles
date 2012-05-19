@@ -10,6 +10,9 @@ public:
   virtual void update(void) = 0;
   virtual int getX(void) = 0;
   virtual int getY(void) = 0;
+  virtual double getRed(void) = 0;
+  virtual double getGreen(void) = 0;
+  virtual double getBlue(void) = 0;
 } ;
 
 #endif

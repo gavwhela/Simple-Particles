@@ -15,6 +15,9 @@ public:
   void update(void);
   int getX(void);
   int getY(void);
+  double getRed(void);
+  double getGreen(void);
+  double getBlue(void);
 private:
   int randnum(int min, int max);
   int x;
@@ -23,6 +26,9 @@ private:
   int vy;
   int ax;
   int ay;
+  double red;
+  double green;
+  double blue;
 } ;
 
 #endif

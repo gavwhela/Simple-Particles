@@ -76,11 +76,11 @@ void display(void) {
   glClear(GL_COLOR_BUFFER_BIT);
   glPointSize(2.0);
   glBegin(GL_POINTS);
-  glColor3f(1.0, 0.0, 1.0);
   int i;
   for(i = 0; i < MAX_PARTICLES; i++){
     Particle* p = particles[i];
     if(p != NULL) {
+      glColor3f(p->getRed(), p->getGreen(), p->getBlue());
       glVertex2i(p->getX(), p->getY());
     }
   } 
@@ -92,7 +92,7 @@ void display(void) {
 
 void idle(void) {
   int i;
-  int added = 100;
+  int added = 10;
   for(i = 0; i < MAX_PARTICLES; i++){
     Particle* p = particles[i];
     if(p == NULL && added){
